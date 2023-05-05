@@ -46,7 +46,7 @@ contract MPTProofTest is Test {
 
     // Utility functions
 
-    function readData(string memory path) internal view returns (ProofData memory) {
+    function readData(string memory path) internal returns (ProofData memory) {
         ProofData memory data;
         string memory json = vm.readFile(path);
 
