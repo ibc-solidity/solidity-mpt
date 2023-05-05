@@ -1,0 +1,14 @@
+{
+  "name": "solidity-mpt",
+  "version": "0.1.0",
+  "description": "A verification library for Merkle Particia Trie(MPT) proof",
+  "dependencies": {
+    "solidity-rlp": "^2.0.7"
+  },
+  "devDependencies": {
+    "@openzeppelin/contracts": "^4.8.3",
+    "solhint": "^3.4.1"
+  },
+  "author": "Jun Kimura",
+  "license": "Apache-2.0"
+}

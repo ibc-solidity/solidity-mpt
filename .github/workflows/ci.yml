@@ -1,0 +1,44 @@
+name: CI
+on: [push, pull_request]
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: recursive
+
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+
+    - name: Install Foundry
+      uses: foundry-rs/foundry-toolchain@v1
+      with:
+        version: nightly
+
+    - name: npm install
+      run: npm install
+
+    - name: Test verifyMembership
+      run: forge test --gas-report -m testVerifyMembership
+
+    - name: Test verifyNonMembership
+      run: forge test --gas-report -m testVerifyNonMembership
+
+  tool:
+    name: Tool
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: recursive
+
+    - uses: dtolnay/rust-toolchain@stable
+
+    - uses: Swatinem/rust-cache@v2
+
+    - name: Build a tool
+      run: cargo build
