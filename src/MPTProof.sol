@@ -195,16 +195,15 @@ library MPTProof {
     function decodeNibbles(bytes memory bz, uint256 offset) internal pure returns (bytes memory nibbles) {
         uint256 length = bz.length * 2;
         require(bz.length > 0 && offset <= length);
-        length -= offset;
-        nibbles = new bytes(length);
 
+        nibbles = new bytes(length - offset);
         uint256 i = offset;
         if (offset & 1 == 1) {
             nibbles[0] = bytes1((uint8(bz[offset / 2]) >> 0) & 0xF);
             i++;
         }
         unchecked {
-            for (; i < length + offset - 1; i += 2) {
+            for (; i < length - 1; i += 2) {
                 nibbles[i - offset] = bytes1((uint8(bz[i / 2]) >> 4) & 0xF);
                 nibbles[i - offset + 1] = bytes1((uint8(bz[i / 2]) >> 0) & 0xF);
             }
