@@ -1,7 +1,14 @@
 {
   "name": "solidity-mpt",
-  "version": "0.1.0",
   "description": "A verification library for Merkle Particia Trie(MPT) proof",
+  "version": "0.1.0",
+  "files": [
+    "src/**/*.sol"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibc-solidity/solidity-mpt.git"
+  },
   "dependencies": {
     "solidity-rlp": "^2.0.7"
   },
