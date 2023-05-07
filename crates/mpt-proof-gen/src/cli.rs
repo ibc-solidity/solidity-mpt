@@ -206,7 +206,7 @@ impl Cli {
 
             if self.out_dir.is_some() {
                 self.write_to_file(
-                    format!("{:03}.json", i + 1),
+                    format!("{:03}.json", i),
                     ProofData::new(
                         storage_proof.to_vec(),
                         account_root.to_vec(),
