@@ -1,6 +1,12 @@
 # solidity-mpt
 
-This provides a verification library for Merkle Particia Tree(MPT) in Solidity.
+## Disclaimer
+
+This package has not been audited. The developers take no responsiblity should this package be used in a production environment without first auditing sections applicable to you by a reputable auditing firm.
+
+## Introduction
+
+This provides a verification library for Ethereum's Merkle Particia Tree(MPT) in Solidity.
 
 You can see an example that verifies a proof of ERC-20 contract's state(i.e. account balance) [here](./test/MPTProof.t.sol).
 
