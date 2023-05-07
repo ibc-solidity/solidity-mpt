@@ -28,8 +28,8 @@ jobs:
     - name: Test verifyNonMembership
       run: forge test --gas-report -m testVerifyNonMembership
 
-  tool:
-    name: Tool
+  tools:
+    name: Tools
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -40,5 +40,5 @@ jobs:
 
     - uses: Swatinem/rust-cache@v2
 
-    - name: Build a tool
+    - name: Build tools
       run: cargo build
