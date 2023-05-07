@@ -19,4 +19,8 @@ contract MPTProofHelper {
     {
         return MPTProof.verify(proof, rootHash, mptKeyNibbles);
     }
+
+    function decodeNibbles(bytes memory bz, uint256 offset) public pure returns (bytes memory) {
+        return MPTProof.decodeNibbles(bz, offset);
+    }
 }

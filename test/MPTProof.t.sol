@@ -44,6 +44,11 @@ contract MPTProofTest is Test {
         }
     }
 
+    function testDecodeNibbles(bytes memory bz, uint256 offset) public view {
+        vm.assume(bz.length > 0 && offset <= bz.length * 2);
+        verifier.decodeNibbles(bz, offset);
+    }
+
     // Utility functions
 
     function readData(string memory path) internal returns (ProofData memory) {
